@@ -11,3 +11,4 @@ Python 编码设置
    :glob:
 
    ../contents/c01/*
+   ../contents/c02/*
