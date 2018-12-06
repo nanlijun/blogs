@@ -41,17 +41,19 @@
  | Python3.x urllib库的结构相对于Python2.x有一些出入，Python2.x中使用的urllib2和urllib库，而Python3.x中合并成一个唯一的urllib库。
 
 ::
+
  >>>importurllib
  >>>dir(urllib)
  ['__builtins__','__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__','__path__', '__spec__', 'error', 'parse', 'request', 'response']
 
-| 可以看到urllib除了以双下划线开头结尾的内置属性外，还有4个重要的属性，分别是error，parse，request，response。
+|   可以看到urllib除了以双下划线开头结尾的内置属性外，还有4个重要的属性，分别是error，parse，request，response。
 
 **1.request的使用**
 
  | request请求最简单的操作是用urlopen方法，代码如下：
 
 ::
+
  >>>import urllib.request
  >>>response = urllib.request.urlopen('http://python.org/')
  >>>result = response.read().decode('utf-8')
