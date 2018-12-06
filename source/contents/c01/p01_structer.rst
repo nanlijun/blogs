@@ -2,7 +2,7 @@
 1 爬虫
 =====================================
 
-1.1 Python爬虫学习之一
+1.1 Python爬虫介绍
 -------------------------------------
 
 **1.什么是爬虫？**
@@ -30,7 +30,29 @@
  |   爬虫的过程亦是如此，通过对服务器发出请求得到HTML网页，然后对下载的网页进行解析，得到我们想要的内容。当然，这是一个爬虫过程的一个概况，其中还有很多细节的东西需要我们处理的，这些在后续会继续与大家分享。
 
  |   了解了爬虫的基本过程后，就可以开始我们真正的爬虫之旅了。
+ |   以上内容摘自https://segmentfault.com/a/1190000012681700
 
+1.2 Python爬虫---urllib库
+-------------------------------------
 
+**urllib库**
 
+ | Python有一个内置的urllib库，使用这个内置库可以完成向服务器发出请求并获得网页的功能。
+ | Python3.x urllib库的结构相对于Python2.x有一些出入，Python2.x中使用的urllib2和urllib库，而Python3.x中合并成一个唯一的urllib库。
 
+>>>importurllib
+>>>dir(urllib)
+['__builtins__','__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__','__path__', '__spec__', 'error', 'parse', 'request', 'response']
+
+ | 可以看到urllib除了以双下划线开头结尾的内置属性外，还有4个重要的属性，分别是error，parse，request，response。
+
+**1.request的使用**
+
+ | request请求最简单的操作是用urlopen方法，代码如下：
+
+>>>import urllib.request
+>>>response = urllib.request.urlopen('http://python.org/')
+>>>result = response.read().decode('utf-8')
+>>>print(result)
+
+ | 得到的就是我们想要的html的网页了。
